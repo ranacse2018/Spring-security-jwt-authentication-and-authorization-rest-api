@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style type="text/css">
+    body div {
+        text-align: center;
+    }
+    label, input[type=text], input[type=password], input[type=email] {
+        display: inline-block;
+        width: 150px;
+        margin: 5px;
+    }
+    input[type=submit] {
+        width: 60px;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1> Registration</h1>
+    <div id="response"></div>
+    <div>
+        <form id="registration-form">
+            <div><label>Username: </label> <input id="username" type="text" name="username"/></div>
+            <div><label>Password: </label><input type="password" id="password" name="password"/></div>
+            <div><label>Email: </label><input type="email" id="email" name="email"/></div>
+            <div>
+                <button type="submit" id="btn-registration">Register</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" th:src="@{/js/registration.js}" ></script>
+</body>
+</html>

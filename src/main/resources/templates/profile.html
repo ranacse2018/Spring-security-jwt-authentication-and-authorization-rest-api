@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+      .button {
+        color: black;
+        text-align: center;
+        text-decoration: none;
+      }
+      body div {
+        text-align: center;
+      }
+      label, input[type=text], input[type=password], select[type=text] {
+        display: inline-block;
+        width: 150px;
+        margin: 5px;
+      }
+      input[type=submit] {
+        width: 60px;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1 id="head_title"> Profile</h1>
+
+    <button type="button" id="btn-all">All(UnAuthorized page)</button>
+    <!--<div sec:authorize="hasAnyRole('USER','ADMIN','MODERATOR')">-->
+    <!--<div sec:authorize="isAuthenticated()">-->
+    <button style="display: none;" type="button" id="btn-user">user</button>
+    <!--</div>-->
+    <!--<div sec:authorize="hasRole('MODERATOR')">-->
+    <button style="display: none;" type="button" id="btn-moderator">Moderator</button>
+    <!--  </div>-->
+    <!--<div sec:authorize="hasRole('ADMIN')">-->
+    <button style="display: none;" type="button" id="btn-admin">Admin</button>
+    <!--</div>-->
+    <button type="button" id="btn-profile"><a href="/api/auth/profile" class="button">Profile</a></button>
+
+    <div style='background-color:#7FA7B0; color:white; padding:20px 20px 20px 20px; margin:10px 0px 10px 0px'>
+        <div id="response"></div>
+        <div id="divForm" style="display: none;">
+            <div id="roleInfo"></div>
+           <form  id="addrole-form" >
+                <div><label>User Id: </label> <input id="userId" type="text" name="userId"/></div>
+                <div><label>Add User Role: </label>
+                    <select id="role" name="role" type="text">
+                        <option value="ROLE_USER">User</option>
+                        <option value="ROLE_ADMIN">Admin</option>
+                        <option value="ROLE_MODERATOR">Moderator</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit" id="btn-addrole">Add Role</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <button type="button" id="btn-logout">Log Out</button>
+</div>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" th:src="@{/js/profile.js}"></script>
+</body>
+</html>

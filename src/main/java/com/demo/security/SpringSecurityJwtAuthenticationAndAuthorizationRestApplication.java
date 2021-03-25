@@ -1,0 +1,13 @@
+package com.demo.security;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringSecurityJwtAuthenticationAndAuthorizationRestApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringSecurityJwtAuthenticationAndAuthorizationRestApplication.class, args);
+	}
+
+}
